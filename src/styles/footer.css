@@ -1,0 +1,22 @@
+.footer {
+    position: fixed;
+    background-color: blue;
+    width: 100%;
+    height: 50px;
+    top: 1;
+    bottom: 0;
+}
+
+.conteudo-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 16px;
+}
+
+.icones-footer {
+    display: flex;
+    font-size: 30px;
+    cursor: pointer;
+}
