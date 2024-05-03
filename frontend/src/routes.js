@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
-import QuemSomos from "./pages/Quem-somos";
+import Equipe from "./pages/Equipe";
 
 function RoutesApp() {
     return (
@@ -10,7 +10,7 @@ function RoutesApp() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/Login" element={<Login />} />
-                <Route path="/QuemSomos" element={<QuemSomos />} />
+                <Route path="/Equipe" element={<Equipe />} />
             </Routes>
         </BrowserRouter>
     )

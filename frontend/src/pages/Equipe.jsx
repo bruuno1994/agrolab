@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-function QuemSomos() {
+function Equipe() {
   return (
     <div>
       <Header />
@@ -15,4 +15,4 @@ function QuemSomos() {
   );
 }
 
-export default QuemSomos;
+export default Equipe;

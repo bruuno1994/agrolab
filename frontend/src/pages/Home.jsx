@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+//import Footer from "../components/Footer";
 import '../styles/home.css'
 
 function Home() {
@@ -10,12 +10,11 @@ function Home() {
           <Header />
 
           <div className="container">
-                  <h1>AgroLab</h1>
-                  <h2>Inovando na Terra e na Estufa</h2>
-                  <img src='/agrolab.png' alt="logo do projeto"/>
+                  <img src='/img/background.jpeg' alt="logo do projeto"/>
+                  <h1>Laboratório AgroLab</h1>
+                  <h2>Análise de amostras e monitoramento de mudas em estufa</h2>
               </div>
         </div>
-        <Footer />
       </>
     );
   }
