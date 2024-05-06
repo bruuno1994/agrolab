@@ -1,0 +1,51 @@
+.conteudo {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}  
+    
+.card {
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    height: 350px;
+    width: 175px;
+}
+
+.equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.card-image img {
+    width: 150px;
+    height: 175px;
+}
+
+.card-title {
+    height: 100%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 25px;
+    width: 100%;
+    color: black;
+}
+
+.icons a {
+    color: black;
+}

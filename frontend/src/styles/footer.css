@@ -1,17 +1,17 @@
 .footer {
-    position: fixed;
-    background-color: blue;
+    position: relative;
+    background-color: #c5d932;
     width: 100%;
     height: 50px;
-    top: 1;
     bottom: 0;
+    margin-top: auto;
 }
 
 .conteudo-footer {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    color: white;
+    color: black;
     font-size: 16px;
 }
 

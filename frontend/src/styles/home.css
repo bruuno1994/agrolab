@@ -13,3 +13,29 @@ h1, h2 {
 .container img {
     width: 100%;
 }
+
+.container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container2-info {
+    width: 35%;
+    text-align: center;
+    color: #022601;
+}
+
+.container2-info button {
+    background-color: #c5d932;
+    width: 125px;
+    height: 35px;
+    font-size: 16px;
+    border-radius: 7px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.container2 img {
+    border-radius: 5px;
+}
