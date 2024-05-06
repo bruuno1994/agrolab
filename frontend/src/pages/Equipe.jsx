@@ -51,7 +51,7 @@ function Equipe() {
 
             <div className="card">
               <div className="card-image">
-                <img src="/img/gabriel.jpg" alt="Gabriel" />
+                <img src="/img/gabriel.jpeg" alt="Gabriel" />
               </div>
               <div className="card-title">
                 <h3>Gabriel Araújo</h3>
