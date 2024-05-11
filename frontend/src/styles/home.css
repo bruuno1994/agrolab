@@ -12,6 +12,9 @@ h1, h2 {
 
 .container img {
     width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 
 .container2 {
