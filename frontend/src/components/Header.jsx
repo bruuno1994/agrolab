@@ -10,7 +10,7 @@ function Header() {
                 <ul>
                     <li><Link to='/'> Home </Link></li>
                     <li><Link to='/Equipe'> Equipe </Link></li>
-                    <li><Link to='/Analise'> Análise que Fazemos </Link></li>
+                    <li><Link to='/Analises'> Análises que Fazemos </Link></li>
                     <li><Link to='/Contato'> Contato </Link></li>
                     <li><Link to='/Login'> Login </Link></li>
                 </ul>
