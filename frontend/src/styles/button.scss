@@ -1,0 +1,28 @@
+.custom-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #46db29;
+  background-color: #147219;
+  cursor: pointer;
+  transition: background-color 0.3s, border-radius 0.3s, clip-path 0.3s;
+
+  &:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+  }
+
+  &.hovered {
+    background-color: #a52525;
+  }
+
+  &.pressed {
+    background-color: #3a298a; /* Cor de fundo ao pressionar o botão */
+  }
+
+  &.round {
+    border-radius: 50px; /* Botão redondo */
+  }
+
+  &.triangle {
+    border-radius: 0;
+  }
+}
