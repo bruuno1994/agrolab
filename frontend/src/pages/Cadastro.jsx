@@ -2,18 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../styles/login.css";
+import "../styles/cadastro.css";
 
 import { HiOutlineMail } from "react-icons/hi";
 import { PiLockKey } from "react-icons/pi";
+import { FaRegUser } from "react-icons/fa";
 
-function Login() {
+function Cadastro() {
   return (
     <div>
       <Header />
 
-      <div class="container-login">
-        <h1>Login</h1>
+      <div class="container-cadastro">
+        <h1>Cadastro</h1>
         <div className="container-secundario">
           <div className="lado-esquerdo">
             <img src="./img/agrolab.png" alt="logo do projeto" />
@@ -21,6 +22,12 @@ function Login() {
           </div>
           <div className="lado-direito">
             <form action="post">
+
+            <FaRegUser size={25} />
+              <input type="text" placeholder="Nome:" />
+              <br />
+              <br />
+
               <HiOutlineMail size={25} />
               <input type="email" placeholder="E-mail:" />
               <br />
@@ -31,8 +38,7 @@ function Login() {
 
               <br />
               <br />
-              <button> Entrar </button>
-              <p> Primeiro acesso? <Link to ='/Cadastro'>Clique aqui</Link> </p>
+              <button>Cadastrar</button>
             </form>
           </div>
         </div>
@@ -43,4 +49,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Cadastro;

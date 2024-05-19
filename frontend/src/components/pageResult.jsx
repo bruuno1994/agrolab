@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/pageResult.scss';
+import "../styles/pageResult.scss"
 
 function PageResult() {
   return (
@@ -30,6 +30,17 @@ function PageResult() {
             <td>22°C</td>
             <td>15/05/2024</td>
             <td>João Silva</td>
+          </tr>
+
+          <tr>
+            <td>Amostra 2</td>
+            <td>19/05/2024</td>
+            <td>5 horas</td>
+            <td>80%</td>
+            <td>40%</td>
+            <td>28°C</td>
+            <td>Em andamento</td>
+            <td>Fulano</td>
           </tr>
           {/* Adicione mais linhas conforme necessário */}
         </tbody>

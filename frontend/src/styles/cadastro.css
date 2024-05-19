@@ -1,4 +1,4 @@
-.container-login {
+.container-cadastro {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -45,4 +45,26 @@ input {
     border-bottom: 1px solid black;
     font-size: larger;
     padding: 5px;
+}
+
+button {
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border: 1px solid #022601;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: white;
+    color: #022601;
+}
+
+button:hover {
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border: 1px solid #022601;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #022601;
+    color: #fff;
 }

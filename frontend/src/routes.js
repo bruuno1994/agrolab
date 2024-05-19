@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Equipe from "./pages/Equipe";
 import Analises from "./pages/Analises";
 import Contato from "./pages/Contato";
-import ResultAnalysis from "./pages/ResultAnalysis";
+import Cadastro from "./pages/Cadastro";
 
 function RoutesApp() {
     return (
@@ -16,7 +16,7 @@ function RoutesApp() {
                 <Route path="/Equipe" element={<Equipe />} />
                 <Route path="/Analises" element={<Analises />} />
                 <Route path="/Contato" element={<Contato />} />
-                <Route path="/ResultAnalysis" element={<ResultAnalysis />} />
+                <Route path="/Cadastro" element={<Cadastro />} />
             </Routes>
         </BrowserRouter>
     )

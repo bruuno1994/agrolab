@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import "../styles/analises.css";
+import PageResult from "../components/pageResult";
+import Button from "../components/button";
+import "../styles/resultAnalysis.css";
+
+const Teste = () => {
+  fetch('/api')
+    .then(resultado => {
+      console.log(resultado);
+    });
+}
 
 function Analises() {
+  useEffect(() => {
+    Teste();
+  }, []);
+
   return (
-    <>
+    <div>
       <Header />
-      <div className="container">
-        <h1>Página de Análises</h1>
+      <div>
+        <PageResult />
+        <Button trasformButton={true} />
       </div>
-        <Footer />
-    </>
+      <br />
+      <Footer />
+    </div>
   );
 }
 
