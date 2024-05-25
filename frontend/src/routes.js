@@ -6,6 +6,7 @@ import Equipe from "./pages/Equipe";
 import Analises from "./pages/Analises";
 import Contato from "./pages/Contato";
 import Cadastro from "./pages/Cadastro";
+import Dashboard from "./pages/Dashboard"
 
 function RoutesApp() {
     return (
@@ -17,6 +18,7 @@ function RoutesApp() {
                 <Route path="/Analises" element={<Analises />} />
                 <Route path="/Contato" element={<Contato />} />
                 <Route path="/Cadastro" element={<Cadastro />} />
+                <Route path="/Dashboard" element={<Dashboard />} />
             </Routes>
         </BrowserRouter>
     )

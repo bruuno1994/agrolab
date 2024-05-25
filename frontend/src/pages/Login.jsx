@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify'
 import "../styles/login.css";
 
 import { HiOutlineMail } from "react-icons/hi";
 import { PiLockKey } from "react-icons/pi";
 
+
 function Login() {
+  
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const nav = useNavigate();
+
+  async function handleLogin(e) {
+    e.preventDefault();
+
+    if(email !== '' && senha !== '') {
+      toast.success('Login concluído com sucesso!');
+      nav('/Dashboard')
+    } else {
+      toast.warning('Falha ao efetuar o login!')
+    }
+  }
+
   return (
     <div>
       <Header />
@@ -20,19 +39,31 @@ function Login() {
             <h2>AgroLab</h2>
           </div>
           <div className="lado-direito">
-            <form action="post">
+            <form>
               <HiOutlineMail size={25} />
-              <input type="email" placeholder="E-mail:" />
+              <input 
+              type="email" 
+              placeholder="E-mail:" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              
+              />
               <br />
               <br />
 
               <PiLockKey size={25} />
-              <input type="password" placeholder="Senha:" />
+              <input 
+              type="password" 
+              placeholder="Senha:" 
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+
+              />
 
               <br />
               <br />
-              <button> Entrar </button>
-              <p> Primeiro acesso? <Link to ='/Cadastro'>Clique aqui</Link> </p>
+              <button onClick={handleLogin}> Entrar </button>
+               <p>Primeiro acesso? <Link to ='/Cadastro'>Clique aqui</Link></p>
             </form>
           </div>
         </div>

@@ -1,0 +1,17 @@
+.sidebar {
+    position: absolute;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    min-height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
