@@ -3,15 +3,13 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 import "../styles/login.css";
 
 import { HiOutlineMail } from "react-icons/hi";
 import { PiLockKey } from "react-icons/pi";
 
-
 function Login() {
-  
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const nav = useNavigate();
@@ -19,19 +17,28 @@ function Login() {
   async function handleLogin(e) {
     e.preventDefault();
 
-    if(email !== '' && senha !== '') {
-      toast.success('Login concluído com sucesso!');
-      nav('/Dashboard')
+    const savedData = JSON.parse(localStorage.getItem('formData'));
+
+    if (savedData) {
+      const { email: savedEmail, senha: savedSenha } = savedData;
+      if (email === savedEmail && senha === savedSenha) {
+        toast.success('Login realizado com sucesso!');
+        
+         nav('/Dashboard');
+      } else {
+        toast.warning('E-mail ou senha incorretos!');
+      }
     } else {
-      toast.warning('Falha ao efetuar o login!')
+      toast.error("Erro inesperado, tente novamente!")
     }
   }
+
 
   return (
     <div>
       <Header />
 
-      <div class="container-login">
+      <div className="container-login">
         <h1>Login</h1>
         <div className="container-secundario">
           <div className="lado-esquerdo">
@@ -40,30 +47,34 @@ function Login() {
           </div>
           <div className="lado-direito">
             <form>
-              <HiOutlineMail size={25} />
-              <input 
-              type="email" 
-              placeholder="E-mail:" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              
-              />
+              <div className="inputs">
+                <HiOutlineMail size={25} />
+                <input
+                  type="email"
+                  placeholder="E-mail:"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
               <br />
               <br />
 
-              <PiLockKey size={25} />
-              <input 
-              type="password" 
-              placeholder="Senha:" 
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-
-              />
-
+              <div className="inputs">
+                <PiLockKey size={25} />
+                <input
+                  type="password"
+                  placeholder="Senha:"
+                  value={senha}
+                  onChange={(e) => setSenha(e.target.value)}
+                />
+              </div>
               <br />
               <br />
               <button onClick={handleLogin}> Entrar </button>
-               <p>Primeiro acesso? <Link to ='/Cadastro'>Clique aqui</Link></p>
+              <p>
+                Primeiro acesso? <Link to="/Cadastro">Clique aqui</Link>
+              </p>
             </form>
           </div>
         </div>
@@ -74,4 +85,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login

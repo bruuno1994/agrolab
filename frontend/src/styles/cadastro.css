@@ -40,6 +40,18 @@
     border-bottom: 1px solid #022601;
 }
 
+.inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 input {
     border: none;
     border-bottom: 1px solid black;

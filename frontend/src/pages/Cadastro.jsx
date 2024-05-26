@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify'
+import { toast } from "react-toastify";
 import "../styles/cadastro.css";
 
 import { HiOutlineMail } from "react-icons/hi";
@@ -11,30 +11,43 @@ import { FaRegUser } from "react-icons/fa";
 
 function Cadastro() {
 
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
   const nav = useNavigate();
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    senha: '',
+  });
 
-  async function handleCadastro(e) {
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  
+
+  const handleCadastro = async (e) => {
     e.preventDefault();
 
-    if(nome !== ''&& email !== '' && senha !== '') {
-      console.log(nome);
-      console.log(email);
-      console.log(senha);
-      toast.success('Cadastro realizado com sucesso!');
-      nav('/Login')
+    if (formData.nome !== "" && formData.email !== "" && formData.senha !== "" ) {
+      localStorage.setItem('formData', JSON.stringify(formData));
+
+      console.log(formData);
+      toast.success("Cadastro realizado com sucesso!");
+      nav("/Login");
     } else {
-      toast.warning('Falha ao efetuar o cadastro!')
+      console.log(formData);
+      toast.warning('Falha ao efetuar o cadastro!');
     }
+  }
+
+  function handleVoltar() {
+    nav('/login')
   }
 
   return (
     <div>
       <Header />
 
-      <div class="container-cadastro">
+      <div className="container-cadastro">
         <h1>Cadastro</h1>
         <div className="container-secundario">
           <div className="lado-esquerdo">
@@ -43,41 +56,49 @@ function Cadastro() {
           </div>
           <div className="lado-direito">
             <form action="post">
-
-            <FaRegUser size={25} />
-              <input 
-              type="text" 
-              placeholder="Nome:" 
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              
-              />
+              <div className="inputs">
+                <FaRegUser size={25} />
+                <input
+                  type="text"
+                  name="nome"
+                  placeholder="Nome:"
+                  value={formData.nome}
+                  onChange={handleInputChange}
+                />
+              </div>
               <br />
               <br />
 
-              <HiOutlineMail size={25} />
-              <input 
-              type="email" 
-              placeholder="E-mail:"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-
-              />
+              <div className="inputs">
+                <HiOutlineMail size={25} />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail:"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+              </div>
               <br />
               <br />
 
-              <PiLockKey size={25} />
-              <input 
-              type="password" 
-              placeholder="Senha:"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              
-              />
+              <div className="inputs">
+                <PiLockKey size={25} />
+                <input
+                  type="password"
+                  name="senha"
+                  placeholder="Senha:"
+                  value={formData.senha}
+                  onChange={handleInputChange}
+                />
+              </div>
 
               <br />
               <br />
+              <div className="buttons">
               <button onClick={handleCadastro}>Cadastrar</button>
+              <button onClick={handleVoltar}>Voltar</button>
+              </div>
             </form>
           </div>
         </div>
