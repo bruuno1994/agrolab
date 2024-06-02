@@ -9,7 +9,7 @@ function Sidebar() {
   async function logout(e) {
     e.preventDefault();
 
-    window.localStorage.clear();
+    // window.localStorage.clear();
     nav("/");
     toast.success("Obrigado por utilizar o AgroLab !")
   }
