@@ -1,20 +1,24 @@
 {
-  "name": "agrolab",
+  "name": "api-x",
   "version": "1.0.0",
-  "description": "Projeto PI4- AgroLab- sistema de monitoramento de crescimento de sementes em estufa ",
-  "main": "server.js",
+  "description": "Api AgroLab",
+  "main": "index.js",
   "scripts": {
-    "device": "nodemon src/server.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Marlon",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "mongodb": "^6.6.0",
-    "mongoose": "^8.3.3",
-    "uuid": "^9.0.1"
+    "@hapi/hapi": "^21.3.9",
+    "@hapi/inert": "^7.1.0",
+    "@hapi/vision": "^7.0.3",
+    "hapi-swagger": "^17.2.1",
+    "joi": "^17.12.3",
+    "klaw-sync": "^6.0.0",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

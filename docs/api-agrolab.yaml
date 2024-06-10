@@ -1,0 +1,578 @@
+openapi: 3.0.0
+info: 
+  title: Api do PI Agrolab
+  version: 1.0.0
+
+servers: 
+  - url: https://localhost:5000/
+
+tags: 
+  - name: sample
+    description: Operations for a collection of samples 
+    externalDocs:
+      url: https://localhost:5000/docs
+
+
+paths:
+  /samples:
+    post:
+      tags:
+        - sample
+      summary: Register a new sample
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required: name_responsible
+              $ref: '#/components/schemas/SampleRequest'
+             
+      responses: 
+        '201':
+          description: When a sample is created with sucess
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseError'
+            
+    get:
+      tags:
+        - sample
+      summary: Return a list of samples
+
+      responses:
+        '200':
+          description: when samples are returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleResponse'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+  /samples/{id}:
+    get:
+      tags:
+        - sample
+      summary: Return a sample by id
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: number
+          description: Id of the sample
+          required: true
+
+      responses:
+        '200':
+          description: When a sample is returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDataError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+    put:
+      tags:
+          - sample
+      summary: Update a sample name by id
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: number
+          description: Id of the sample
+          required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SampleUpdateRequest'
+
+      responses:
+        '200':
+          description: When a sample is returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleUpdateResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDataError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+    delete:
+      tags:
+        - sample
+      summary: Delete a sample by id
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: number
+          description: Id of the sample
+          required: true
+
+      responses:
+        '200':
+          description: When a sample is deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleDeleteResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDeleteError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+  /samples/records:
+    post:
+      tags:
+        - sample records
+      summary: Register a data for a sample
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SampleDataRequest'
+             
+      responses: 
+        '201':
+          description: When a sample data is created with sucess
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SampleDataResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDataError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+    get:
+      tags:
+        - sample records
+      summary: Return a list of sample data
+
+      responses:
+        '200':
+          description: When a sample is returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleDataResponse'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+  /samples/records/{id}:
+    get:
+      tags:
+        - sample records
+      summary: Return a list of sample data by sample id
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: number
+          description: Id of the sample
+          required: true
+
+      responses:
+        '200':
+          description: When a sample is returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleDataResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDataError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+    delete:
+      tags:
+        - sample records
+      summary: Delete a sample data by sample id
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: number
+          description: Id of the sample
+          required: true
+
+      responses:
+        '200':
+          description: When a sample is deleted
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleDeleteResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseDeleteError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+  /samples/sample?sample_name={name}: 
+    get:
+      tags:
+        - sample
+      summary: Return a sample by name
+      parameters:
+        - in: query
+          name: sample_name
+          schema:
+            type: string
+          example: Amostra1
+          description: Name of the sample
+          required: true
+      responses:
+        '200':
+          description: When a sample is returned
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SampleResponse'
+        '400':
+          description: Invalid request made by the client
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResponseFilterSampleError'
+        '404':
+          description: Sample not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  description:
+                    type: string
+                    default: Sample not found
+
+
+components:
+  schemas:
+    SampleRequest:
+      type: object
+      properties:
+        sample:
+          type: string
+          example: Amostra1
+          description: Name of the sample
+        name_responsible:
+          type: string
+          example: Marlon
+          description: Name of the person responsible for the sample
+
+    SampleDataRequest:
+      type: object
+      properties:
+        sample_id: 
+          type: object
+          properties:
+            id:
+              type: integer
+              example: 1
+        sensor_temperature:
+          type: number
+          example: 25.3 
+          description: Temperature Sensor
+        sensor_humidity:
+          type: number
+          example: 60.5 
+          description: Humidity Sensor
+        sensor_soil:
+          type: number
+          example: 10.4 
+          description: Soil Sensor
+        lumen: 
+          type: boolean
+          default: true
+        data_criacao:
+          type: string
+          format: string
+          example: 2024-01-01 00:00
+          description: When a data is create
+
+    SampleUpdateRequest:
+      type: object
+      properties:
+        sample_name:
+          type: string
+          example: AmostraAtualizada
+          description: New name of the sample
+        name_responsible:
+          type: string
+          example: Marlon
+          description: New name of the responsible
+
+    SampleFilterRequest:
+      type: object
+      properties:
+        sample_name:
+          type: string
+          example: Amostra1
+          description: New name of the sample
+
+    SampleDataFilterRequest:
+      type: object
+      properties:
+        data_criacao:
+          type: string
+          format: date
+          example: 2024-01-01 
+          description: When a data is create
+
+    SampleResponse:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+        sample:
+          type: string
+          example: Amostra1
+          description: Name of the sample
+        name_responsible:
+          type: string
+          example: Marlon
+          description: Name of the person responsible for the sample
+
+    SampleDataResponse:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+          description: ID of the data
+        sample_id:
+          type: number
+          example: 1
+          description: Name of the sample
+        sensor_temperature:
+          type: number
+          example: 25.3 
+          description: Temperature Sensor 
+        sensor_humidity:
+          type: number
+          example: 60.5 
+          description: Humidity Sensor
+        sensor_soil:
+          type: number
+          example: 10.4 
+          description: Soil Sensor 
+        lumen: 
+          type: boolean
+          default: true
+        data_criacao:
+          type: string
+          format: date
+          example: 2024-01-01 00:00
+          description: When a data is create
+
+    SampleUpdateResponse:
+      type: object
+      properties:
+        id:
+          type: number
+          example: 1
+          description: ID of the data
+        sample_name:
+          type: string
+          example: AmostraAtualizada
+          description: Name of the sample
+        name_responsible:
+          type: string
+          example: Marlon
+          description: Name of the person responsible for the sample
+
+    SampleDeleteResponse:
+      type: object
+      properties:
+        description:
+          type: string
+          default: Sample was deleted !
+
+    ResponseError:
+      type: object
+      properties:
+        description:
+          type: string
+          default: Invalid Request
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: Required attribute
+              description:
+                type: string              
+                example: name of the sample is required
+
+    ResponseDataError:
+      type: object
+      properties:
+        description:
+          type: string
+          default: Invalid Request
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: Required attribute
+              description:
+                type: string              
+                example: ID of the sample is required
+
+    ResponseDeleteError:
+      type: object
+      properties:
+        description:
+          type: string
+          default: Invalid Request
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: Required attribute
+              description:
+                type: string              
+                example: ID is required
+
+    ResponseFilterSampleError:
+      type: object
+      properties:
+        description:
+          type: string
+          default: Invalid Request
+        details:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                example: Required attribute
+              description:
+                type: string              
+                example: Name of the sample is required
