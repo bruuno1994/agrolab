@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import PageResult from "../components/pageResult";
+
 import "../styles/resultAnalysis.css";
 
 const Teste = () => {
@@ -18,12 +16,10 @@ function Analises() {
 
   return (
     <div>
-      <Header />
       <div>
-        <PageResult />
+
       </div>
       <br />
-      <Footer />
     </div>
   );
 }

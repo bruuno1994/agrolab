@@ -1,5 +1,6 @@
 const {server, plugins} = require('./server');
 
+
 (async () => {
     try {
         //register routes plugins

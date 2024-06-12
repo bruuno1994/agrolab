@@ -8,9 +8,11 @@ import Contato from "./pages/Contato";
 import Cadastro from "./pages/Cadastro";
 import Dashboard from "./pages/Dashboard"
 import MapaGeral from "./pages/MapaGeral"
+import Detalhes from "./pages/Detalhes"
 
 function RoutesApp() {
     return (
+
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -21,8 +23,10 @@ function RoutesApp() {
                 <Route path="/Cadastro" element={<Cadastro />} />
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/MapaGeral" element={<MapaGeral />} />
+                <Route path="/Detalhes" element={<Detalhes />} />
             </Routes>
         </BrowserRouter>
+        
     )
 }
 
