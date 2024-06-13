@@ -1,0 +1,135 @@
+import { StyleSheet } from "react-native";
+
+export const Styles = StyleSheet.create({
+    containerHome: {
+        flex: 1,
+        backgroundColor: 'white',
+    },
+    containerLogo: {
+        width: '100%',
+        backgroundColor: '#D7D9D7',
+        padding: 4,
+    },
+    logo: {
+        width: 50,
+        height: 50,
+    },
+    titleAmostra: {
+        backgroundColor: 'white',
+        paddingVertical: 10,
+        alignItems: 'center',
+        borderBottomWidth: 3,
+        borderBottomColor: 'black',        
+    },
+    textAmostra: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+    },
+
+    container: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 2, 
+        marginTop: 10,
+        flexWrap: 'wrap', 
+    },
+    MediaTemp: {
+        width: '48%',
+        backgroundColor: '#00FFFF',
+        height: 250,
+        marginBottom: 10, 
+        marginRight: 5, 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+    },
+    textMediaTemp: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+        marginTop: 10, 
+    },
+    numberMediaTemp: {
+        fontSize: 60,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+        marginTop: 10, 
+    },
+    graficoPizza: {
+        width: '48%',
+        backgroundColor: '#00FA9A',
+        height: 250,
+        marginBottom: 10, 
+        marginLeft: 5, 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+    },
+    textgraficoPizza: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+        marginTop: 10, 
+    },
+    containerLegenda: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginTop: 10, 
+        paddingHorizontal: 10, 
+    },
+    legendItem: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginVertical: 5,
+    },
+    legendColor: {
+        width: 15,
+        height: 15,
+        borderRadius: 10,
+        marginRight: 10,
+    },
+    legendText: {
+        fontSize: 10,
+    },
+
+    chartTitle: {
+        fontSize: 16,
+        textAlign: 'center',
+        marginBottom: 10,
+    },
+    contaner2: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
+        marginTop: 10,
+        flexWrap: 'wrap', 
+    },
+    mediaMes: {
+        width: '100%', 
+        backgroundColor: '#FFA500',
+        height: 250,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    mediaSolo: {
+        width: '48%', 
+        backgroundColor: '#FFD700',
+        height: 250,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    mediaUmid: {
+        width: '48%', 
+        backgroundColor: '#FFFF00',
+        height: 250,
+        marginBottom: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+});
