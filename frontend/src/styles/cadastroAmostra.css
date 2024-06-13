@@ -1,0 +1,51 @@
+.container-cadastro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+h1 {
+    color: #3366ff;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+    font-size: larger;
+    padding: 5px;
+}
+
+button {
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border: 1px solid #022601;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: white;
+    color: #022601;
+}
+
+button:hover {
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border: 1px solid #022601;
+    cursor: pointer;
+    border-radius: 7px;
+    background-color: #013170;
+    color: #fff;
+}

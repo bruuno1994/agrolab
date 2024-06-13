@@ -8,6 +8,6 @@ const sequelizeConfig = {
 };
 
 //database, user, senha
-const sequelize = new Sequelize('agrolab', 'postgres', '95379542', sequelizeConfig);
+const sequelize = new Sequelize('agrolab', 'postgres', 'admin', sequelizeConfig);
 
 module.exports = {sequelize};

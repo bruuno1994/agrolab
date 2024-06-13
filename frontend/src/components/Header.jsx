@@ -9,8 +9,7 @@ function Header() {
                 <img src='./img/agrolab.png' alt='logo do projeto' width={150} />
                 <ul>
                     <li><Link to='/'> Home </Link></li>
-                    <li><Link to='/Equipe'> Equipe </Link></li>
-                    <li><Link to='/Analises'> Análises que Fazemos </Link></li>
+                    <li><Link to='/Equipe'> Equipe </Link></li>                    
                     <li><Link to='/Contato'> Contato </Link></li>
                     <li><Link to='/Login'> Login </Link></li>
                 </ul>

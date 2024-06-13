@@ -9,6 +9,8 @@ import Cadastro from "./pages/Cadastro";
 import Dashboard from "./pages/Dashboard"
 import MapaGeral from "./pages/MapaGeral"
 import Detalhes from "./pages/Detalhes"
+import CadastroAmostra from "./pages/CadastroAmostra";
+import Amostra from "./pages/Amostra";
 
 function RoutesApp() {
     return (
@@ -24,6 +26,8 @@ function RoutesApp() {
                 <Route path="/Dashboard" element={<Dashboard />} />
                 <Route path="/MapaGeral" element={<MapaGeral />} />
                 <Route path="/Detalhes" element={<Detalhes />} />
+                <Route path="/CadastroAmostra" element={<CadastroAmostra />} />
+                <Route path="/Amostra" element={<Amostra />} />
             </Routes>
         </BrowserRouter>
         

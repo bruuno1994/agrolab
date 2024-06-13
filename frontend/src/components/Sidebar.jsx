@@ -16,9 +16,11 @@ function Sidebar() {
   return (
     <>
       <div className="sidebar">
-
+        <img src='./img/agrolab.png' alt='logo do projeto' width={150} />
         <button> <Link to='/Dashboard'> Dashboard </Link> </button>
         <button> <Link to='/MapaGeral'> Mapa Geral </Link> </button>
+        <button> <Link to='/CadastroAmostra'> Cadastro </Link> </button>
+        <button> <Link to='/Amostra'> Amostras </Link> </button>
         <button> <Link to='/Detalhes'> Detalhes </Link> </button>
         <button onClick={logout}> Sair </button>
 

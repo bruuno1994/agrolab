@@ -3,12 +3,13 @@
     border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     flex-direction: column;
-    width: 200px;
+    width: 150px;
     min-height: 100vh;
     top: 0;
     left: 0;
+    background-color: #00557cbb;
 }
 
 .sidebar a {

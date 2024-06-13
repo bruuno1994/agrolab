@@ -40,7 +40,7 @@ function Equipe() {
               <div className="card-title">
                 <h3>Marlon Vinicius</h3>
                 <p>Age: 30 Years</p>
-                <p>Office: Back-End / Mobile Developer</p>
+                <p>Office: Back-End Developer</p>
               </div>
               <div className="icons">
               <Link to=''> <SiFacebook /> </Link>
