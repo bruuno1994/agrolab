@@ -36,6 +36,8 @@ function CadastroAmostra() {
 
             if (!response.ok) {
                 toast.warning('Falha ao efetuar o cadastro!');
+            } else {
+                toast.success('Amostra cadastrada com sucesso!')
             }
             nav("/dashboard");
         } catch (error) {
