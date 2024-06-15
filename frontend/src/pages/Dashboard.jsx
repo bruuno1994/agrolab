@@ -23,6 +23,7 @@ function Dashboard() {
       <div className="container-dashboard">
         <h1>Bem-vindo(a), {nomeUsuario}!</h1>
         <h2>O que você deseja fazer hoje?</h2>
+        <img src="/img/dashboard.jpg" alt="dashboard" width={900} />
         <Sidebar />
 
       </div>
